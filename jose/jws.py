@@ -225,6 +225,9 @@ def _get_keys(key):
     except Exception:
         pass
 
+    if isinstance(key, int):
+        key = str(key)
+
     # JWK Set per RFC 7517
     if 'keys' in key:
         return key['keys']
